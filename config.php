@@ -17,11 +17,8 @@ function createTable($sqlStmt, $tableName)
 $query = file_get_contents("sql/create-user.sql");
 createTable($query, "User");
 
-}
 
 $query = file_get_contents("sql/create-user.sql");
-
-}
 
 
 ?>

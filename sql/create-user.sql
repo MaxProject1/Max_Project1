@@ -8,4 +8,4 @@ create table IF NOT EXISTS user
     dateOfBirth        TEXT,
     email  TEXT,
     phoneNumber TEXT,
-    adress    TEXT,
+    adress    TEXT);
