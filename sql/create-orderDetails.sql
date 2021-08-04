@@ -1,4 +1,4 @@
-create table IF NOT EXISTS transaction
+create table IF NOT EXISTS transcation
 (
     transaction_id     INTEGER not null
         primary key autoincrement,
@@ -6,8 +6,4 @@ create table IF NOT EXISTS transaction
     user_id    TEXT,
     dateOfPurchase_id  TEXT,
     dateOfDelivery  TEXT
-
-$query = file_get_contents("sql/create-orderDetails.sql");
-createTable($query, "Order Details");
-
 );

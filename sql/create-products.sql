@@ -8,7 +8,4 @@ create table IF NOT EXISTS products
     productPricing  TEXT,
     productAmount TEXT
 
-$query = file_get_contents("sql/create-products.sql");
-createTable($query, "Products");
-
 );
