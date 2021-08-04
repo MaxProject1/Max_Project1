@@ -8,4 +8,9 @@ create table IF NOT EXISTS user
     dateOfBirth        TEXT,
     email  TEXT,
     phoneNumber TEXT,
-    adress    TEXT);
+    adress    TEXT
+
+$query = file_get_contents("sql/create-user.sql");
+createTable($query, "User");
+
+);
