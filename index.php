@@ -20,5 +20,10 @@
         </center>
     </form>
 <?php endif; ?>
+
+<?php include "template.php"; ?>
+
+<?php include 'login.php'; ?>
+
 </body>
 </html>
