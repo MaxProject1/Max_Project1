@@ -27,6 +27,9 @@
             <li class="nav-item"> <!-- Index button -->
                 <a class="nav-link" href="contact.php">Contact Us!</span></a>
             </li>
+            <li class="nav-item"> <!-- Index button -->
+                <a class="nav-link" href="profile.php">Profile</span></a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -25,5 +25,7 @@
 
 <?php include 'login.php'; ?>
 
+<?php include 'profile.php'; ?>
+
 </body>
 </html>
