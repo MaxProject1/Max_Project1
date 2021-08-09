@@ -13,7 +13,7 @@
 <body>
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php"><img src="Screenshot (1).png" alt="CartsForDays"
+    <a class="navbar-brand" href="index.php"><img src="Photos/CartsForDays.png" alt="CartsForDays"
                                                   style="width: 80px; height: 80px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
