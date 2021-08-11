@@ -3,6 +3,7 @@
 require_once 'config.php';
 
 if (isset($_POST['login'])) {
+
     $username = sanitise_data($_POST['username']);
     $password = sanitise_data($_POST['password']);
 
@@ -21,3 +22,4 @@ if (isset($_POST['login'])) {
         }
     }
 }
+?>

@@ -21,11 +21,10 @@
     </form>
 <?php endif; ?>
 
-<?php include "template.php"; ?>
 
 <?php include 'login.php'; ?>
+<?php include 'template.php'; ?>
 
-<?php include 'profile.php'; ?>
 
 </body>
 </html>
