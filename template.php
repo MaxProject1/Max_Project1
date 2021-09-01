@@ -30,6 +30,9 @@
             <li class="nav-item"> <!-- Index button -->
                 <a class="nav-link" href="profile.php">Profile</span></a>
             </li>
+            <li class="nav-item"> <!-- Index button -->
+                <a class="nav-link" href="logout.php">Log Out</span></a>
+            </li>
         </ul>
     </div>
 </nav>

@@ -14,6 +14,17 @@ function createTable($sqlStmt, $tableName)
     }
 }
 
+$query= $conn->query("SELECT COUNT(*) as count FROM user");
+$rowCount = $query->fetchArray();
+$userCount = $rowCount["count"];
+
+if ($userCount == 0) {
+    addUser("admin", "admin", "Administrator", "admin.jpg", "Administrator");
+    addUser("user", "user", "User", "user.jpg", "User");
+    addUser("ryan", "ryan", "Ryan", "ryan.jpg", "User");
+
+}
+
 $query = file_get_contents("sql/create-user.sql");
 createTable($query, "User");
 
@@ -31,11 +42,16 @@ createTable($query, "Order Details");
 function addUser($username, $unhashedPassword, $name, $profilePic, $accessLevel) {
     global $conn;
     $hashedPassword = password_hash($unhashedPassword, PASSWORD_DEFAULT);
-    $sqlstmt = $conn->prepare("INSERT INTO user (firstname, middleName, lastName, adress, username, password, phoneNumber, email, dateOfBirth ) VALUES (:userName, :hashedPassword, :name, :profilePic, :accessLevel)");
-    $sqlstmt->bindValue(':userName', $username);
-    $sqlstmt->bindValue(':hashedPassword', $hashedPassword);
-    $sqlstmt->bindValue(':name', $name);
-    $sqlstmt->bindValue(':profilePic', $profilePic);
+    $sqlstmt = $conn->prepare("INSERT INTO user (firstname, middleName, lastName, adress, username, password, phoneNumber, email, dateOfBirth, profilePic,  ) VALUES (:firstname, :middlename, :lastname, :adress, :username, :hashedPassword, :password, :phonenumber, :profilePic :email, :dateOfbirth)"
+    );
+    $sqlstmt->bindValue(':firstname', $firstname);
+    $sqlstmt->bindValue(':middlename', $middleName);
+    $sqlstmt->bindValue(':lastName', $lastName);
+    $sqlstmt->bindValue(':adress', $adress);
+    $sqlstmt->bindValue(':adress', $username);
+    $sqlstmt->bindValue(':adress', $adress);
+    $sqlstmt->bindValue(':adress', $adress);
+
     $sqlstmt->bindValue(':accessLevel', $accessLevel);
     if ($sqlstmt->execute()) {
         echo "<p style='color: green'>User: ".$username. ": Created Successfully</p>";
