@@ -39,19 +39,21 @@ createTable($query, "Messaging");
 $query = file_get_contents("sql/create-orderDetails.sql");
 createTable($query, "Order Details");
 
-function addUser($username, $unhashedPassword, $name, $profilePic, $accessLevel) {
+?>
+function addUser($firstname, $middleName, $lastname, $adress, $username, $unhashedPassword, $phoneNumber, $email, $dateOfBirth, $profilePic, $accessLevel) {
     global $conn;
     $hashedPassword = password_hash($unhashedPassword, PASSWORD_DEFAULT);
-    $sqlstmt = $conn->prepare("INSERT INTO user (firstname, middleName, lastName, adress, username, password, phoneNumber, email, dateOfBirth, profilePic,  ) VALUES (:firstname, :middlename, :lastname, :adress, :username, :hashedPassword, :password, :phonenumber, :profilePic :email, :dateOfbirth)"
-    );
+    $sqlstmt = $conn->prepare("INSERT INTO user (firstname, middleName, lastName, adress, username, password, phoneNumber, email, dateOfBirth, profilePic, accessLevel ) VALUES (:firstname, :middleName, :lastName, :adress, :userName, :hashedPassword, :phoneNUmber, :email, :DateofBirth, :profilePic, :accessLevel)");
     $sqlstmt->bindValue(':firstname', $firstname);
-    $sqlstmt->bindValue(':middlename', $middleName);
-    $sqlstmt->bindValue(':lastName', $lastName);
+    $sqlstmt->bindValue(':middleName', $middleName);
+    $sqlstmt->bindValue(':lastName', $lastname);
     $sqlstmt->bindValue(':adress', $adress);
-    $sqlstmt->bindValue(':adress', $username);
-    $sqlstmt->bindValue(':adress', $adress);
-    $sqlstmt->bindValue(':adress', $adress);
-
+    $sqlstmt->bindValue(':hashedPassword', $hashedPassword);
+    $sqlstmt->bindValue(':userName', $username);
+    $sqlstmt->bindValue(':userName', $username);
+    $sqlstmt->bindValue(':userName', $username);
+    $sqlstmt->bindValue(':userName', $username);
+    $sqlstmt->bindValue(':profilePic', $profilePic);
     $sqlstmt->bindValue(':accessLevel', $accessLevel);
     if ($sqlstmt->execute()) {
         echo "<p style='color: green'>User: ".$username. ": Created Successfully</p>";
@@ -60,4 +62,12 @@ function addUser($username, $unhashedPassword, $name, $profilePic, $accessLevel)
     }
 }
 
+$query= $conn->query("SELECT COUNT(*) as count FROM user");
+$rowCount = $query->fetchArray();
+$userCount = $rowCount["count"];
+
+if ($userCount == 0) {
+    addUser("admin", "admin", "admin", "home", "admin", "admin", 40319850, 'email.com', '20', 'something.jpg', 'Administrator');
+    addUser("user", "user", "User", "user.jpg", "User");
+    addUser("ryan", "ryan", "Ryan", "ryan.jpg", "User");
 ?>
