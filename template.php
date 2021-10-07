@@ -59,5 +59,6 @@ if ($_SESSION["level"] "Administrator") : ?>
     <a class="nav-link" href="search-user.php">Search Users</span></a>
 </li>
 <?php endif; ?>
+<?php endif; ?>
 
 ?>
