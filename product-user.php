@@ -34,5 +34,6 @@ $productList = $conn->query("SELECT productName, image FROM products");
     }
     ?>
 
+    <a href="product-remove.php?prodCode=<?php echo $productData[2]; ?>">Delete</a>
 
 </div>
