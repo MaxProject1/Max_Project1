@@ -53,8 +53,8 @@ function outputFooter()
     date_default_timezone_set('Australia/Canberra');
     echo "<footer>This page was last modified: " . date("F d Y H:i:s.", filemtime("index.php")) . "</footer>";
 }
-
-if ($_SESSION["level"] "Administrator") : ?>
+if (isset($_SESSION["level"])) :
+if ($_SESSION["level"] == "Administrator") : ?>
 <li class="nav-item">
     <a class="nav-link" href="search-user.php">Search Users</span></a>
 </li>
