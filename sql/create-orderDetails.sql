@@ -1,9 +1,10 @@
-create table IF NOT EXISTS transcation
+create  table IF NOT EXISTS orderDetails
 (
-    transaction_id     INTEGER not null
-        primary key autoincrement,
-    product_id    TEXT,
-    user_id    TEXT,
-    dateOfPurchase_id  TEXT,
-    dateOfDelivery  TEXT
+    orderDetails_id INTEGER not null primary key,
+    orderCode TEXT not null,
+    userID INTEGER not null,
+    productCode TEXT not null,
+    orderDate DATETIME,
+    quantity INTEGER,
+    status TEXT default 'OPEN' not null
 );
